@@ -51,13 +51,20 @@ def playing(n):
     while counter < n_games:
         opciones_jugador = input('Elegí una opción de la lista: ').upper()
         validar_opcion = player_options(opciones_jugador)
-        player_set = validar_opcion
-        if not player_set in opciones:
+        opciones_jugador = validar_opcion
+        if not opciones_jugador in opciones:
             print('Opción no válida.')
             r = str(input('¿Querés empezar dde nuevo? ("s") para aceptar) '))
             if r == 's':
                 playing(n)
             else:
+                print(f'\nResultado final:\n{jugador_1}: {cpu_counter}\n{jugador_2}: {player_counter}\nEmpates: {ties_counter}')
+                if player_counter > cpu_counter:
+                    print('GANASTE!!!\n')
+                elif player_counter < cpu_counter:
+                    print('Ganó la máquina. Suerte para la próxima!\n')
+                else:
+                    print('Es un empate!!\n')
                 print('Juego terminado.')
                 exit()
         opciones_cpu = random.choice(opciones)
