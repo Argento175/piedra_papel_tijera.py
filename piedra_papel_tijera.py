@@ -110,6 +110,7 @@ def playing(n):
 
 
 if __name__ == '__main__':
-    n = int(input('Al mejor de cuántos partidos? '))
+    print('¡¡Bienvenidos a "Piedra Papel o Tijera"!!')
+    n = int(input('Al mejor de cuántos partidos será el match? '))
     playing(n)
-    # player_options(n)
+    
